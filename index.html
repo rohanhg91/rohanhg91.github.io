@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#editor',
+            plugins: 'code image lists advlist link table',
+            toolbar: 'undo redo | bold italic | fontsizeselect fontselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image link code',
+            menubar: false,
+            content_style: "body { font-family: Arial, sans-serif; font-size: 14px; }"
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,10 +25,10 @@
             <a href="projects.html">Projects</a>
         </nav>
     </header>
-    
-    <section class="about">
+
+    <section>
         <h2>About Me</h2>
-        <p>Hi, I'm [Your Name]. I'm passionate about [your expertise/interests]. This is my personal website where I showcase my projects.</p>
+        <textarea id="editor">Write about yourself here...</textarea>
     </section>
 
     <footer>
