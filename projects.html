@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Your Name</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#projects-editor',
+            plugins: 'code image lists advlist link table',
+            toolbar: 'undo redo | bold italic | fontsizeselect fontselect | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image link code',
+            menubar: false
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,13 +24,9 @@
         </nav>
     </header>
 
-    <section class="projects">
-        <h2>Featured Projects</h2>
-        <ul>
-            <li><strong>Project 1</strong> - A brief description. <a href="#">View</a></li>
-            <li><strong>Project 2</strong> - A brief description. <a href="#">View</a></li>
-            <li><strong>Project 3</strong> - A brief description. <a href="#">View</a></li>
-        </ul>
+    <section>
+        <h2>Project Details</h2>
+        <textarea id="projects-editor">Add your projects here...</textarea>
     </section>
 
     <footer>
