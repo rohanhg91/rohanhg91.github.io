@@ -9,43 +9,139 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
     <style>
-        #editor-container {
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .editor-container {
             height: 200px;
             background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
-        #save-btn {
+        .save-btn {
             margin-top: 10px;
-            padding: 10px;
-            background-color: blue;
+            padding: 10px 15px;
+            background-color: #007bff;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 14px;
+        }
+        .save-btn:hover {
+            background-color: #0056b3;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .project-card {
+            flex: 1 1 calc(33.333% - 30px);
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .project-card h3 {
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Your Name</h1>
-        <p>Welcome to my personal website!</p>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
         </nav>
     </header>
 
-    <section>
-        <h2>About Me</h2>
-        <div id="editor-container"></div>
-        <button id="save-btn">Save</button>
-    </section>
+    <div class="container">
+        <!-- About Me Section -->
+        <section>
+            <h2 class="section-title">About Me</h2>
+            <div id="about-editor" class="editor-container"></div>
+            <button id="save-about" class="save-btn">Save About Me</button>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2 class="section-title">Projects</h2>
+            <div id="projects-editor" class="editor-container"></div>
+            <button id="save-projects" class="save-btn">Save Projects</button>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2025 Your Name | <a href="https://github.com/yourusername">GitHub</a></p>
+        <p>© 2025 Your Name | <a href="https://github.com/yourusername" style="color: white;">GitHub</a></p>
     </footer>
 
     <script>
-        var quill = new Quill('#editor-container', {
+        var aboutEditor = new Quill('#about-editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'font': [] }, { 'size': [] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'align': [] }],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    ['image', 'code-block']
+                ]
+            }
+        });
+
+        var projectsEditor = new Quill('#projects-editor', {
             theme: 'snow',
             modules: {
                 toolbar: [
@@ -71,17 +167,19 @@
             });
             const data = await response.json();
             const content = JSON.parse(atob(data.content));
-            quill.root.innerHTML = content.aboutMe;
+            aboutEditor.root.innerHTML = content.aboutMe || "";
+            projectsEditor.root.innerHTML = content.projects || "";
         }
 
         // Function to Save Content to GitHub
-        async function saveContent() {
+        async function saveContent(section) {
             const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`, {
                 headers: { "Authorization": `token ${TOKEN}` }
             });
             const fileData = await response.json();
             const newContent = {
-                aboutMe: quill.root.innerHTML
+                aboutMe: section === "aboutMe" ? aboutEditor.root.innerHTML : fileData.content ? JSON.parse(atob(fileData.content)).aboutMe : "",
+                projects: section === "projects" ? projectsEditor.root.innerHTML : fileData.content ? JSON.parse(atob(fileData.content)).projects : ""
             };
 
             await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`, {
@@ -91,17 +189,20 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    message: "Updated content",
+                    message: `Updated ${section} content`,
                     content: btoa(JSON.stringify(newContent)),
                     sha: fileData.sha
                 })
             });
 
-            alert("Content saved!");
+            alert(`${section} content saved!`);
         }
 
-        document.getElementById("save-btn").addEventListener("click", saveContent);
+        document.getElementById("save-about").addEventListener("click", () => saveContent("aboutMe"));
+        document.getElementById("save-projects").addEventListener("click", () => saveContent("projects"));
+
         loadContent();
     </script>
+
 </body>
 </html>
