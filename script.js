@@ -27,6 +27,21 @@ async function loadContent() {
     }
 }
 
+async function loadProjectContent(projectKey, editorSelector, saveButtonSelector) {
+    const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`, {
+        headers: { "Authorization": `token ${TOKEN}` }
+    });
+    const data = await response.json();
+    const content = JSON.parse(atob(data.content));
+
+    var editor = new Quill(editorSelector, { theme: "snow" });
+    editor.root.innerHTML = content[projectKey] || "";
+
+    document.querySelector(saveButtonSelector).addEventListener("click", () => {
+        saveContent(projectKey, editor.root.innerHTML);
+    });
+}
+
 async function saveContent(section, data) {
     const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`, {
         headers: { "Authorization": `token ${TOKEN}` }
