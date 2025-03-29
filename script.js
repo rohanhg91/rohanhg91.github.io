@@ -1,7 +1,7 @@
-const GITHUB_USERNAME = "yourusername";
+const GITHUB_USERNAME = "rohanhg91";
 const REPO_NAME = "website-content";
 const FILE_PATH = "content.json";
-const TOKEN = "your_personal_access_token"; 
+const TOKEN = "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"; 
 
 async function loadContent() {
     const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${FILE_PATH}`, {
