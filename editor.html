@@ -3,27 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>My HTML Editor</title>
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>
-    tinymce.init({
-      selector: '#myEditor',
-      height: 500,
-      menubar: true,
-      plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table paste code help wordcount'
-      ],
-      toolbar: 'undo redo | formatselect | bold italic backcolor | \
-                alignleft aligncenter alignright alignjustify | \
-                bullist numlist outdent indent | removeformat | help',
-      content_style: 'body { font-family:Arial,sans-serif; font-size:14px }'
-    });
-  </script>
+  <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 </head>
 <body>
-  <h1>WYSIWYG HTML Editor</h1>
-  <textarea id="myEditor">Type your content here...</textarea>
-  <p>After you're done, click the **"Code"** button to view the HTML, and copy it for your project pages.</p>
+  <h1>WYSIWYG HTML Editor (No API Key!)</h1>
+  <form>
+    <textarea name="editor1" id="editor1" rows="10" cols="80">
+      Type your project content here...
+    </textarea>
+  </form>
+  <p>Click the **"Source"** button to see and copy the HTML code.</p>
+
+  <script>
+    CKEDITOR.replace('editor1');
+  </script>
 </body>
 </html>
