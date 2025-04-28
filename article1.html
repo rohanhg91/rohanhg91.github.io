@@ -15,7 +15,102 @@
     </nav>
   </header>
   <main>
-    <p>This article is a web app built using React and Node.js...</p>
+    <h1><strong>Understanding Linear Regression: Concepts, Math, Gradient Descent, and Example</strong></h1>
+
+<p>Linear regression is one of the most fundamental and widely used techniques in statistical modeling and machine learning. Despite its simplicity, it serves as a building block for more complex algorithms and provides powerful insights into relationships between variables.</p>
+
+<h2>What is Linear Regression?</h2>
+
+<p>Linear regression is a supervised learning algorithm used to model the relationship between a dependent variable (target) and one or more independent variables (features) by fitting a linear equation to observed data.</p>
+
+<p>When we use one feature to predict the outcome, it&rsquo;s called Simple Linear Regression. If there are multiple features, we refer to it as Multiple Linear Regression.</p>
+
+<h2>Mathematical Formulation</h2>
+
+<h3>Simple Linear Regression</h3>
+
+<p>Let:</p>
+
+<ul>
+	<li>y be the dependent variable</li>
+	<li>x be the independent variable</li>
+	<li>ŷ be the predicted value</li>
+	<li>&beta;₀ be the intercept (bias)</li>
+	<li>&beta;₁ be the slope (weight)</li>
+</ul>
+
+<p>The linear relationship is modeled as:</p>
+
+<p>&nbsp; &nbsp; &nbsp; ŷ = &beta;₀ + &beta;₁x</p>
+
+<p>To minimize prediction error, we use the Mean Squared Error (MSE):</p>
+
+<p>MSE = (1/n) * &Sigma;(yᵢ &mdash; ŷᵢ)&sup2;</p>
+
+<p>Optimal coefficients using the method of least squares:</p>
+
+<p>&beta;₁ = &Sigma;(xᵢ &mdash; x̄)(yᵢ &mdash; ȳ) / &Sigma;(xᵢ &mdash; x̄)&sup2; &beta;₀ = ȳ &mdash; &beta;₁x̄</p>
+
+<h2>Gradient Descent in Linear Regression</h2>
+
+<p>When the dataset is large or has many features, computing the exact coefficients using the least squares method can be slow. Instead, we use Gradient Descent, an iterative optimization technique.</p>
+
+<h3>Cost Function</h3>
+
+<p>J(&beta;₀, &beta;₁) = (1/2n) * &Sigma;(&beta;₀ + &beta;₁xᵢ &mdash; yᵢ)&sup2;</p>
+
+<h3>Update Rules</h3>
+
+<p>&beta;₀ := &beta;₀ &mdash; &alpha; * &part;J/&part;&beta;₀ &beta;₁ := &beta;₁ &mdash; &alpha; * &part;J/&part;&beta;₁</p>
+
+<p>Where:</p>
+
+<ul>
+	<li>&alpha; is the learning rate</li>
+	<li>&part;J/&part;&beta;₀ = (1/n) * &Sigma;(ŷᵢ &mdash; yᵢ)</li>
+	<li>&part;J/&part;&beta;₁ = (1/n) * &Sigma;(ŷᵢ &mdash; yᵢ) * xᵢ</li>
+</ul>
+
+<p>Repeat until convergence.</p>
+
+<h2>Visual Explanation</h2>
+
+<p>To understand how gradient descent converges to the minimum, imagine a ball rolling down a hill. The slope of the hill at each point tells the ball which direction to roll to decrease elevation &mdash; just like gradient descent uses partial derivatives to minimize the cost function.</p>
+
+<p>&nbsp;</p>
+
+<h2>Practical Example with Graph</h2>
+
+<p>Suppose you&rsquo;re predicting sales based on the advertising budget. We simulate data where the relationship is linear with some noise:</p>
+
+<p>True model: y = 2.5x + 5</p>
+
+<p>We use linear regression to fit a line through the data:</p>
+
+<pre>
+<img src="https://miro.medium.com/v2/resize:fit:1050/1*MRMvdCtRGshDF2jV3rCeNg.png" />
+</pre>
+
+<pre>
+This plot shows the blue data points and the red regression line learned by the model.
+</pre>
+
+<h3>Interpretation and Use</h3>
+
+<ul>
+	<li>Intercept (&beta;₀): Expected value of y when x = 0</li>
+	<li>Slope (&beta;₁): Change in y for a unit change in x</li>
+</ul>
+
+<p>Gradient descent is useful when the data is too large or high-dimensional for analytical solutions.</p>
+
+<h2>Conclusion</h2>
+
+<p>Linear regression is a simple yet effective algorithm. With gradient descent, it becomes scalable for large datasets and complex problems. Mastering it is foundational to understanding more advanced machine learning models.</p>
+
+<ul>
+</ul>
+
   </main>
 </body>
 </html>
