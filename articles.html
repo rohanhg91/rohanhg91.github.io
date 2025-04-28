@@ -22,8 +22,8 @@
   <script>
     const articles = [
       {
-        title: "Article 1: Web App",
-        summary: "A web app built using React and Node.js.",
+        title: "Understanding Linear Regression: Concepts, Math, Gradient Descent, and Example",
+        summary: "Linear regression is one of the most fundamental and widely used techniques in statistical modeling and machine learning. Despite its simplicity, it serves as a building block for more complex algorithms and provides powerful insights into relationships between variables.",
         detailPage: "article1.html"
       },
       {
@@ -36,7 +36,7 @@
     const articleList = document.getElementById('articleList');
     articles.forEach(article => {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="\${article.detailPage}">\${article.title}</a> - \${article.summary}`;
+      li.innerHTML = `<a href="\${articles.detailPage}">\${articles.title}</a> - \${articles.summary}`;
       articleList.appendChild(li);
     });
   </script>
