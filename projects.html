@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <ul id="projectList"></ul>
+  </main>
+
+  <!-- Projects Data -->
+  <script>
+    const projects = [
+      {
+        title: "Project 1: Web App",
+        summary: "A web app built using React and Node.js.",
+        detailPage: "project1.html"
+      },
+      {
+        title: "Project 2: Data Analysis",
+        summary: "Python scripts for data analysis and visualization.",
+        detailPage: "project2.html"
+      }
+    ];
+
+    const projectList = document.getElementById('projectList');
+    projects.forEach(project => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="\${project.detailPage}">\${project.title}</a> - \${project.summary}`;
+      projectList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
