@@ -1,1 +1,47 @@
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Articles</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="project.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <ul id="articleList"></ul>
+  </main>
+
+  <!-- Articles Data -->
+  <script>
+    const articles = [
+      {
+        title: "Article 1: Web App",
+        summary: "A web app built using React and Node.js.",
+        detailPage: "article1.html"
+      },
+      {
+        title: "Article 2: Data Analysis",
+        summary: "Python scripts for data analysis and visualization.",
+        detailPage: "article2.html"
+      }
+    ];
+
+    const articleList = document.getElementById('articleList');
+    articles.forEach(article => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="\${article.detailPage}">\${article.title}</a> - \${article.summary}`;
+      articleList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
