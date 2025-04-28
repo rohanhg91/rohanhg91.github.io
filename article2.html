@@ -16,7 +16,104 @@
     </nav>
   </header>
   <main>
-    <p>This project is a web app built using React and Node.js...</p>
+    <p>Logistic Regression is one of the foundational algorithms in machine learning &mdash; widely used for binary classification problems. From detecting spam emails to predicting whether a customer will churn, it&rsquo;s a go-to model that&rsquo;s simple, powerful, and fast.</p>
+
+<p>In this post, you&rsquo;ll learn:</p>
+
+<ul>
+	<li>What logistic regression is</li>
+	<li>The math behind it</li>
+	<li>The loss function and optimization with gradient descent</li>
+	<li>Code examples in Python</li>
+	<li>Visualizations</li>
+</ul>
+
+<h2>What is Logistic Regression?</h2>
+
+<p>Logistic Regression predicts the&nbsp;<strong>probability</strong>&nbsp;that a given input belongs to a certain class (usually binary: 0 or 1).</p>
+
+<p>Unlike Linear Regression:</p>
+
+<p>y = &beta;₀ + &beta;₁x₁ + &beta;₂x₂ + ⋯ + &beta;ₙxₙ</p>
+
+<p>Logistic Regression passes this linear output into a&nbsp;<strong>sigmoid function</strong>:</p>
+
+<pre>
+P(y = 1 | x) = &sigma;(z) = 1 / (1 + e⁻ᶻ)</pre>
+
+<p>Where:</p>
+
+<ul>
+	<li><code>z = &beta;₀ + &beta;₁x₁ + &beta;₂x₂ + ⋯ + &beta;ₙxₙ</code></li>
+	<li><code>&sigma;(z)</code>&nbsp;is the sigmoid activation</li>
+</ul>
+
+<h2>Visual: The Sigmoid Function</h2>
+
+<p>The sigmoid function maps input values into the range (0, 1), making it perfect for modeling probabilities.</p>
+
+<ul>
+	<li>For large negative&nbsp;<code>z</code>, output is close to 0</li>
+	<li>For large positive&nbsp;<code>z</code>, output is close to 1</li>
+	<li>At&nbsp;<code>z = 0</code>, output is 0.5</li>
+</ul>
+
+<p><img src="https://miro.medium.com/v2/resize:fit:1050/1*WDf44v5U7shWITE5N2gbCA.png" /></p>
+
+<h2>Making Predictions</h2>
+
+<p>Once you get the probability&nbsp;<code>ŷ = &sigma;(z)</code>, you convert it to a class using a threshold:</p>
+
+<p>ŷ = 1 if ŷ &ge; 0.5<br />
+ŷ = 0 if ŷ &lt; 0.5</p>
+
+<p>This gives us a clean classification decision.</p>
+
+<h2>&nbsp;Loss Function: Binary Cross-Entropy</h2>
+
+<p>To train the model, we minimize the&nbsp;<strong>log loss</strong>:</p>
+
+<pre>
+L(y, ŷ) = &minus;y &middot; log(ŷ) &minus; (1 &minus; y) &middot; log(1 &minus; ŷ)</pre>
+
+<p>For a dataset with&nbsp;<code>m</code>&nbsp;examples, the cost function becomes:</p>
+
+<pre>
+J(&theta;) = &minus;(1/m) &Sigma; [y⁽ⁱ⁾ log(ŷ⁽ⁱ⁾) + (1 &minus; y⁽ⁱ⁾) log(1 &minus; ŷ⁽ⁱ⁾)]</pre>
+
+<p>This penalizes wrong predictions heavily.</p>
+
+<h2>Optimization: Gradient Descent</h2>
+
+<p>We use&nbsp;<strong>gradient descent</strong>&nbsp;to minimize the loss. The update rule is:</p>
+
+<pre>
+&theta; := &theta; &minus; &alpha; &middot; &nabla;J(&theta;)</pre>
+
+<p>The partial derivative (gradient) of the cost function is:</p>
+
+<pre>
+&part;J/&part;&theta;ⱼ = (1/m) &Sigma; (ŷ⁽ⁱ⁾ &minus; y⁽ⁱ⁾) &middot; xⱼ⁽ⁱ⁾</pre>
+
+<p>Where:</p>
+
+<ul>
+	<li><code>&alpha;</code>&nbsp;is the learning rate</li>
+	<li><code>ŷ⁽ⁱ⁾ = &sigma;(&theta;ᵀ &middot; x⁽ⁱ⁾)</code></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h2>&nbsp;Key Takeaways</h2>
+
+<ul>
+	<p>Logistic Regression is used for&nbsp;<strong>binary classification</strong></p>
+	<li>It predicts&nbsp;<strong>probabilities</strong>&nbsp;using the&nbsp;<strong>sigmoid function</strong></li>
+	<li>Trained via&nbsp;<strong>log loss</strong>&nbsp;and&nbsp;<strong>gradient descent</strong></li>
+	<li>Works well as a&nbsp;<strong>baseline model</strong></li>
+	<li>Fast, interpretable, and highly effective</li>
+</ul>
+
   </main>
 </body>
 </html>
