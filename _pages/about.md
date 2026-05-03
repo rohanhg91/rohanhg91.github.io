@@ -1,3 +1,10 @@
+---
+layout: single
+title: "About"
+permalink: /about/
+author_profile: true
+---
+
 ## 👨‍💻 About Me
 
 I am a Lead Data Scientist specializing in AI/ML and scalable data systems, with ~9 years of experience building production-grade solutions across Data Science, Machine Learning, and backend engineering.
