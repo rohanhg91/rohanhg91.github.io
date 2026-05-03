@@ -18,7 +18,7 @@ email: "rohanhgupta91@gmail.com"
 description: "Lead Data Scientist | Agentic AI | LangChain | Financial AI"
 twitter_username: "https://x.com/rohanhgupta1991"
 github_username: username
-minimal_mistakes_skin: default
+minimal_mistakes_skin: "dark"
 search: true
 
 # Build settings
