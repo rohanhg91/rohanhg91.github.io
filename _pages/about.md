@@ -51,7 +51,7 @@ I focus on building systems that are:
 
 I hold an M.Tech in Biomedical Engineering and have worked across domains ranging from **neuromarketing research to advanced AI systems**.
 
-I’ve also published research in biomedical applications as chapter 9 in a book named 'Disruptive Developments in Biomedical Applications' by CRS Press (eBook ISBN9781003272694), reflecting my early foundation in applied science and experimentation. 
+I’ve also published research in biomedical applications as chapter 9 in a book named **Disruptive Developments in Biomedical Applications** by CRS Press (eBook ISBN9781003272694), reflecting my early foundation in applied science and experimentation. 
 
 ---
 
