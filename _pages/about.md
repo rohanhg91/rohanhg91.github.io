@@ -5,36 +5,71 @@ permalink: /about/
 author_profile: true
 ---
 
-## 👨‍💻 About Me
+## 👋 About Me
 
-I am a Lead Data Scientist specializing in AI/ML and scalable data systems, with ~9 years of experience building production-grade solutions across Data Science, Machine Learning, and backend engineering.
+I am a Lead Data Scientist based in Mumbai, with a strong focus on building **end-to-end AI systems that move from research to real-world deployment**.
 
-My work focuses on designing end-to-end AI systems—from data ingestion and feature engineering to model deployment and monitoring—while solving real-world business problems at scale. I have extensive hands-on experience with Python, SQL, and cloud platforms (AWS), along with strong expertise in building scalable data pipelines and ML workflows.
-
-### 🤖 AI & Generative AI
-In recent years, I have been deeply involved in Generative AI and LLM-based systems, including:
-- Building **RAG (Retrieval-Augmented Generation)** pipelines using vector embeddings
-- Designing **agentic AI workflows** with tools like LangChain
-- Developing **LLM-powered applications** for natural language-driven analytics and decision-making
-- Implementing **prompt engineering, evaluation pipelines, and modular AI architectures**
-
-### 📊 Core Expertise
-- Machine Learning & Predictive Modeling (Forecasting, Classification, Optimization)
-- Data Engineering (ETL/ELT pipelines, large-scale data processing)
-- Cloud & MLOps (AWS, model deployment, monitoring, CI/CD concepts)
-- Backend Systems for AI applications (APIs, scalable services)
-- Advanced Analytics & Business Problem Solving
-
-### 🚀 What I Bring
-- Strong ability to **translate business problems into AI-driven solutions**
-- Experience building **production-ready, scalable, and reliable systems**
-- A **product-oriented mindset** with focus on impact, performance, and cost optimization
-- Collaboration with cross-functional teams including product, engineering, and business stakeholders
-
-### 🎯 Interests
-I am particularly interested in building **intelligent systems using LLMs**, **AI platforms**, and **high-impact data products** that combine machine learning with real-world applications.
+My work sits at the intersection of **Agentic AI, machine learning, and large-scale data systems**, where I design solutions that enable intelligent decision-making across domains like finance, geospatial analytics, and risk modeling.
 
 ---
 
-📍 Based in Mumbai, India  
-💼 Open to opportunities in AI/ML, Generative AI, and Data Science leadership roles
+## 🚀 What I Do
+
+- Architect **Agentic AI and Retrieval-Augmented Generation (RAG)** systems using LLMs and LangChain  
+- Build **production-grade ML pipelines** from data ingestion to deployment  
+- Translate ambiguous business problems into **scalable, data-driven solutions**  
+- Lead and mentor data science teams to deliver high-impact projects  
+
+---
+
+## 🧠 Key Work Highlights
+
+- Designed and deployed an **Agentic AI platform for investment research**, enabling natural language-driven analysis of equity and mutual fund data  
+- Built **land cover and crop classification systems** using satellite imagery and Random Forest, incorporating spectral and temporal features for high-accuracy predictions  
+- Developed **crime prediction and forecasting models**, combining spatial ML and time-series techniques to support operational decision-making  
+- Created **fraud detection and risk assessment models** for insurance use cases  
+
+---
+
+## ⚙️ Tech Stack
+
+**Languages & Frameworks:** Python, FastAPI, Django, LangChain  
+**ML & AI:** Machine Learning, GenAI, Prompt Engineering, RAG  
+**Data & Infra:** MongoDB, SQL, AWS (EC2, S3, ECR, Lambda), Docker  
+**Specialized Areas:** Geospatial Analytics, Remote Sensing, Time Series Forecasting  
+
+---
+
+## 🎯 My Approach
+
+I focus on building systems that are:
+- **Practical** → Solve real business problems  
+- **Scalable** → Designed for production environments  
+- **Explainable** → Especially critical in domains like finance and risk  
+
+---
+
+## 📚 Background
+
+I hold an M.Tech in Biomedical Engineering and have worked across domains ranging from **neuromarketing research to advanced AI systems**.
+
+I’ve also published research in biomedical applications, reflecting my early foundation in applied science and experimentation. :contentReference[oaicite:0]{index=0}
+
+---
+
+## 🚀 What I'm Exploring Now
+
+- Advanced **Agentic AI architectures**  
+- Evaluation and guardrails for LLM-based systems  
+- AI-driven financial decision platforms  
+
+---
+
+## 🤝 Let’s Connect
+
+I’m always open to discussing:
+- AI system design  
+- Data science leadership  
+- Interesting problems at the intersection of AI and business  
+
+Feel free to reach out or explore my projects to learn more.
