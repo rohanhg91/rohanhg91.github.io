@@ -29,7 +29,7 @@ The equation is:
 $$y = mx + c$$
 
 where:
-c = intercept
+c = intercept \
 m = slope
 
 In simple term, it tells us:
