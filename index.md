@@ -2,7 +2,7 @@
 layout: home
 author_profile: true
 ---
-
+## 👋 Hi, I’m Rohan
 Lead Data Scientist specializing in **Agentic AI, LangChain systems, and financial analytics**.
 
 ---
