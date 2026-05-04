@@ -4,12 +4,13 @@ date: 2019-04-18T15:34:30-04:00
 categories:
   - blog
 tags:
-  - Jekyll
-  - update
+  - Linear Regression
+  - Hypothesis Testing
 ---
 
 In the world of data science and analytics, one of the first question we often ask is:
 > Does one variable actually influence another?
+
 For example
 - Do study hours improve exam scores?
 - Does advertising spend increase sales?
@@ -25,7 +26,7 @@ Let's understand this with a simple example.
 Linear regression is a statistical technique used to model the relationship between an input variable (X) and an output variable (Y).
 
 The equation is:
-$y = mx + c$
+$$y = mx + c$$
 
 where:
 c = intercept
