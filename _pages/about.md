@@ -1,11 +1,9 @@
 ---
 layout: single
-title: "About"
+title: "👋 About Me"
 permalink: /about/
 author_profile: true
 ---
-
-## 👋 About Me
 
 I am a Lead Data Scientist based in Mumbai, with a strong focus on building **end-to-end AI systems that move from research to real-world deployment**.
 
