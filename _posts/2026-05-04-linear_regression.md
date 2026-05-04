@@ -1,6 +1,6 @@
 ---
 title: "Understanding Linear Regression and Hypothesis Testing: A Simple Practical Example"
-date: 2019-04-18T15:34:30-04:00
+date: 2026-05-04T10:35:00-04:00
 categories:
   - blog
 tags:
