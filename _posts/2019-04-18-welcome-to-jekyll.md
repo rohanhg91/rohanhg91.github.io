@@ -25,10 +25,10 @@ Let's understand this with a simple example.
 ## What is Linear Regression?
 Linear regression is a statistical technique used to model the relationship between an input variable (X) and an output variable (Y).
 
-The equation is:
+The equation is:\
 $$y = mx + c$$
 
-where:
+where:\
 c = intercept \
 m = slope
 
